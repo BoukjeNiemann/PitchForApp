@@ -1,0 +1,61 @@
+Explore Dataset
+========================================================
+author: Boukje Niemann 
+date: `r format(Sys.Date(), format="%B %d %Y")`
+autosize: true
+transition: concave
+font-family: 'Verdana'
+
+Explore Dataset App
+========================================================
+
+The explore dataset app gives you an idea what you can do
+with the dataset mtcars
+- Table the dataset 
+- Get a summary of the dataset
+- Plotting the relation between mpg and other variable
+
+At the _same_ time the app gives you an idea what to do with 
+***Shiny***
+
+Table
+========================================================
+
+<small> 
+The table tab shows a very flexible way of showing your 
+data by presenting a few rows at a time.  
+It uses _next_ buttons and you can sort your data by column
+just clicking at the column header.  
+Also you can search in the data to find a specific item.  
+</small> 
+
+This is all easily set up using the **datatable** function
+from the **DT** package
+![alt text](Screenshot_2018-10-19 Explore Mtcars Dataset.png)
+
+Summary
+========================================================
+type: section
+The summary tab shows the content of below function.
+```{r}
+summary(mtcars)
+```
+
+Plot
+========================================================
+left: 70%
+
+The app gives you:
+
+- a choice box to change the 
+variable in on the righthand side of the mpg ~ hp expression  
+- a checkbox to give to add the linear regression line 
+between the variables in the plot  
+- the formula used to plot is shown in the header
+- the correlation between the variables is shown in the header
+
+***
+
+```{r}
+plot(mpg ~ hp, data = mtcars)
+```
